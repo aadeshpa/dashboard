@@ -54,6 +54,12 @@ EOF
 
 This will create a cluster with ports 80 and 443 exposed on the host computer. This is needed to communicate with the ingress controller later when [Installing NGINX ingress controller](#installing-nginx-ingress-controller).
 
+Once the cluster is started, you can check that the context was added in your kubeconfig file by running:
+
+```bash
+kubectl config get-contexts
+```
+
 The output looks something like this:
 
 ```bash
@@ -63,12 +69,7 @@ CURRENT   NAME                                                 CLUSTER          
 
 The `kind-walkthrough` is the context for the cluster you created and the `*` at the beginning means that it is the currently active context.
 
-If you do not see `*` for `kind-walkthrough` that means its not currently active , you can run 
-below command to select it and make it as active cluster 
 
-```
-kubectl config use-context kind-walkthrough
-```
 
 You can verify that the ports were correctly mapped by `docker` by running `docker ps`. The output shows something like this:
 
