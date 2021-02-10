@@ -54,12 +54,6 @@ EOF
 
 This will create a cluster with ports 80 and 443 exposed on the host computer. This is needed to communicate with the ingress controller later when [Installing NGINX ingress controller](#installing-nginx-ingress-controller).
 
-Once the cluster is started, you can check that the context was added in your kubeconfig file by running:
-
-```bash
-kubectl config get-contexts
-```
-
 The output looks something like this:
 
 ```bash
